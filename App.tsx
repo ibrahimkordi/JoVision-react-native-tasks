@@ -1,11 +1,11 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import Task21 from './Tasks/Task21'; // استدعاء الملف المدمج الشامل
+import Task28 from './Tasks/Task28'; // استدعاء المكون النهائي المدمج لقائمة الصور
 
 export default function App() {
   return (
     <SafeAreaView style={styles.mainContainer}>
-        <Task21 />
+        <Task28 />
     </SafeAreaView>
   );
 }
