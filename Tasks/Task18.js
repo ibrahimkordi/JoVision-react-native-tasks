@@ -4,18 +4,20 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 const Task18 = () => {
     const [isLoading, setIsLoading] = useState(true);
 
-    // دالة منفصلة يتم استدعاؤها لتغيير الحالة بعد انتهاء التايمر
+    // دالة منفصلة لتحديث الحالة (Event Handler / Callback)
     function stopLoading() {
         setIsLoading(false);
     }
 
     useEffect(function () {
         try {
-            // تايمر لمدة 5000 ميلي ثانية (5 ثوانٍ)
+            // تايمر ينتهي بعد 5000 ميلي ثانية (5 ثوانٍ)
             const timer = setTimeout(stopLoading, 5000);
-            return function () { clearTimeout(timer); };
+            return function () { 
+                clearTimeout(timer); 
+            };
         } catch (error) {
-            console.error("Timer error:", error.message);
+            console.error("Timer error in Task 18:", error.message);
         }
     }, []);
 
@@ -27,17 +29,17 @@ const Task18 = () => {
                     <Text style={styles.loadingText}>Loading...</Text>
                 </View>
             ) : (
-                <Text style={styles.nameText}>Ibrahim Al-Kordi</Text>
+                <Text style={styles.nameText}>Ibrahim Ahmed Al-Kordi</Text>
             )}
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+    container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' },
     loadingBox: { alignItems: 'center' },
-    loadingText: { marginTop: 10, fontSize: 18 },
-    nameText: { fontSize: 24, fontWeight: 'bold', color: 'green' }
+    loadingText: { marginTop: 10, fontSize: 18, color: '#555' },
+    nameText: { fontSize: 26, fontWeight: 'bold', color: '#2c3e50' }
 });
 
 export default Task18;
