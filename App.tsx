@@ -1,11 +1,11 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import Task16 from './Tasks/Task16'; // استدعاء التاسك من مجلد Tasks
+import Task20 from './Tasks/Task20'; // استدعاء المكون النهائي
 
 export default function App() {
   return (
     <SafeAreaView style={styles.mainContainer}>
-        <Task16 />
+        <Task20 />
     </SafeAreaView>
   );
 }
